@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="OrderCheckREST:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="restCase.war">
+      <element id="artifact" artifact-name="OrderCheckREST:war exploded" />
+    </root>
+  </artifact>
+</component>

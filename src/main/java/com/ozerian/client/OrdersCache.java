@@ -15,7 +15,7 @@ public final class OrdersCache {
     public static Order addOrder() {
         Order order = new Order();
         order.setId(ordersCounter++);
-        order.setStatus(Status.PENDING);
+        order.setStatus(Status.DONE);
         order.setTime(new Date());
         orders.put(String.valueOf(order.getId()), order);
         return order;

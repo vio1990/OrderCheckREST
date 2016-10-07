@@ -3,7 +3,7 @@ package com.ozerian.model.entity;
 import java.util.Date;
 
 /**
- * This class represents client entity (f.e. car) with id and e-email fields.
+ * This class represents Order entity.
  */
 public class Order {
 
@@ -24,16 +24,16 @@ public class Order {
     /**
      * Get id.
      *
-     * @return long unique id of the client.
+     * @return long unique id of the order.
      */
     public long getId() {
         return id;
     }
 
     /**
-     * Set client's id.
+     * Set order's id.
      *
-     * @param id long client's id.
+     * @param id long order's id.
      */
     public void setId(long id) {
         this.id = id;
@@ -75,6 +75,12 @@ public class Order {
         this.time = time;
     }
 
+    /**
+     * Override equals method.
+     *
+     * @param o Object for comparison.
+     * @return boolean if objects are equals.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -88,6 +94,11 @@ public class Order {
 
     }
 
+    /**
+     * Override hashCode method.
+     *
+     * @return int order's hashCode.
+     */
     @Override
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));

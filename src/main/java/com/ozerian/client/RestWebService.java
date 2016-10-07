@@ -31,7 +31,7 @@ public class RestWebService {
     @Produces(MediaType.APPLICATION_JSON)
     public Order makeNewOrder() {
         Order order = OrdersCache.addOrder();
-        executorService.scheduleWithFixedDelay(new OrderHandler(order), 0, 5, TimeUnit.SECONDS);
+        executorService.execute(new OrderHandler(order));
         return order;
     }
 }

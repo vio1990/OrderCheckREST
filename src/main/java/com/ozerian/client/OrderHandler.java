@@ -16,8 +16,7 @@ public class OrderHandler implements Runnable {
     @Override
     public void run() {
         try {
-            order.setStatus(Status.PENDING);
-            Thread.currentThread().sleep(5000);
+            Thread.currentThread().sleep(30000);
             order.setStatus(Status.DONE);
             order.setTime(new Date());
         } catch (InterruptedException e) {

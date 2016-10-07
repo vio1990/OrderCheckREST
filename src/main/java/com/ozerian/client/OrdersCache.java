@@ -14,8 +14,14 @@ public final class OrdersCache {
 
     public static Order addOrder() {
         Order order = new Order();
-        order.setId(ordersCounter++);
-        order.setStatus(Status.DONE);
+
+        if (orders.containsKey(String.valueOf(ordersCounter)) && (new Date().getTime() - orders.get(String.valueOf(ordersCounter)).getTime().getTime()) < 30000 ) {
+            order.setStatus(Status.PENDING);
+        } else {
+            order.setStatus(Status.DONE);
+        }
+
+        order.setId(++ordersCounter);
         order.setTime(new Date());
         orders.put(String.valueOf(order.getId()), order);
         return order;

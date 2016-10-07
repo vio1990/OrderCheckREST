@@ -11,16 +11,16 @@ public class Order {
 
     private long id;
     private Status status;
-    private Date time;
+    private Date orderTime;
 
 
     public Order() {
     }
 
-    public Order(long id, Status status, Date time) {
+    public Order(long id, Status status, Date orderTime) {
         this.id = id;
         this.status = status;
-        this.time = time;
+        this.orderTime = orderTime;
     }
 
     /**
@@ -60,21 +60,21 @@ public class Order {
     }
 
     /**
-     * Get order's done time.
+     * Get order's done orderTime.
      *
-     * @return Date order's done time.
+     * @return Date order's done orderTime.
      */
-    public Date getTime() {
-        return time;
+    public Date getOrderTime() {
+        return orderTime;
     }
 
     /**
-     * Set order's done time.
+     * Set order's done orderTime.
      *
-     * @param time Date order's done time.
+     * @param orderTime Date order's done orderTime.
      */
-    public void setTime(Date time) {
-        this.time = time;
+    public void setOrderTime(Date orderTime) {
+        this.orderTime = orderTime;
     }
 
     /**
@@ -92,7 +92,7 @@ public class Order {
 
         if (id != order.id) return false;
         if (status != order.status) return false;
-        return time != null ? time.equals(order.time) : order.time == null;
+        return orderTime != null ? orderTime.equals(order.orderTime) : order.orderTime == null;
 
     }
 
@@ -105,7 +105,7 @@ public class Order {
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
         result = 31 * result + (status != null ? status.hashCode() : 0);
-        result = 31 * result + (time != null ? time.hashCode() : 0);
+        result = 31 * result + (orderTime != null ? orderTime.hashCode() : 0);
         return result;
     }
 
@@ -114,7 +114,7 @@ public class Order {
         return "Order{" +
                 "id=" + id +
                 ", status=" + status +
-                ", time=" + time +
+                ", orderTime=" + orderTime +
                 '}';
     }
 }

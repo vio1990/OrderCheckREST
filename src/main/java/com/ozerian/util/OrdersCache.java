@@ -28,16 +28,17 @@ public final class OrdersCache {
      */
     public static Order addOrder() {
         Order order = new Order();
+        order.setId(++ordersCounter);
 
+        String previousOrderKey = String.valueOf(ordersCounter - 1);
         // check if previous order has been done (check if the difference less than 30 seconds).
-        if (orders.containsKey(String.valueOf(ordersCounter)) && (new Date().getTime() - orders.get(String.valueOf(ordersCounter)).getTime().getTime()) < 30000 ) {
+        if (orders.containsKey(previousOrderKey) && (new Date().getTime() - orders.get(previousOrderKey).getOrderTime().getTime()) < 30000) {
             order.setStatus(Status.PENDING);
         } else {
             order.setStatus(Status.DONE);
         }
 
-        order.setId(++ordersCounter);
-        order.setTime(new Date());
+        order.setOrderTime(new Date());
         // put new order to the cache.
         orders.put(String.valueOf(order.getId()), order);
         return order;

@@ -27,7 +27,7 @@ public class OrderHandler implements Runnable {
             Thread.currentThread().sleep(30000);
             //after logic's execution, status makes done and time fixes.
             order.setStatus(Status.DONE);
-            order.setTime(new Date());
+            order.setOrderTime(new Date());
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

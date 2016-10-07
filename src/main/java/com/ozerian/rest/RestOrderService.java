@@ -1,5 +1,7 @@
-package com.ozerian.client;
+package com.ozerian.rest;
 
+import com.ozerian.util.OrderHandler;
+import com.ozerian.util.OrdersCache;
 import com.ozerian.model.entity.Order;
 
 import javax.ws.rs.GET;

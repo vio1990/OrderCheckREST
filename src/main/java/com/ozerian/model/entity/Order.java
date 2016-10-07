@@ -1,5 +1,7 @@
 package com.ozerian.model.entity;
 
+import com.ozerian.model.Status;
+
 import java.util.Date;
 
 /**

@@ -1,4 +1,4 @@
-package com.ozerian.model.entity;
+package com.ozerian.model;
 
 /**
  * Enum class for possible order's status.

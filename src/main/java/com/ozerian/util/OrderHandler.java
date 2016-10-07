@@ -1,7 +1,7 @@
-package com.ozerian.client;
+package com.ozerian.util;
 
 import com.ozerian.model.entity.Order;
-import com.ozerian.model.entity.Status;
+import com.ozerian.model.Status;
 
 import java.util.Date;
 
